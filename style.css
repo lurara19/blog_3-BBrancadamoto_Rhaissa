@@ -1,10 +1,10 @@
 :root {
---cor-primaria: #ffffff;
---cor-secundaria: #ffffff;
---cor-fundo: #ffffff;
---cor-texto: #ffffff;
---cor-contraste: #ffffff;
---cor-botao: #ffffff;
+--cor-primaria: #2a73c7;
+--cor-secundaria: #050c6e;
+--cor-fundo: #96c7ff;
+--cor-texto: #0c0606;
+--cor-contraste: #06a6f0;
+--cor-botao: #1b1414;
 }
 
 body {
@@ -40,7 +40,7 @@ flex-direction: column;
 text-align: center;
 align-items: center;
 justify-content: center;
-background-color: #ffffff;
+background-color: #264892;
 }
 
 img {
