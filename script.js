@@ -25,7 +25,7 @@ function prepararReacoes() {
         const idCard = 'card-${indice + 1}';
 
         const chaveBotaUM = '${idcard}-botaoUM';
-        const chaveBotaDois = '${idcard}-botamDOIS';
+        const chaveBotaDOIS = '${idcard}-botamDOIS';
 
         let UM = number(localStore.getItem(chaveBotaUM))|| 0;
         let DOIS = number(localStore.getItem(chaveBotaDOIS))|| 0;
