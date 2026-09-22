@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     prepararReacoes();
+    criarBotaoTopo();
 });
 
 function prepararReacoes() {
@@ -41,5 +42,25 @@ function prepararReacoes() {
             contadorBotaoDOIS.textContent = DOIS;
             localStorage.setItem(chaveBotaoDOIS, DOIS);
         });
+    });
+}
+
+function criarBotaoTopo() {
+    const botao = document.createElement("button");
+    botao.textContent = "⬆ Topo";
+    botao.id = "botao-topo";
+
+    document.body.appendChild(botao);
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            botao.classList.add("visivel");
+        } else {
+            botao.classList.remove("visivel");
+        }
+    });
+
+    botao.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
