@@ -1,53 +1,45 @@
-document.addEventlistener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     prepararReacoes();
-    prepararAnimacaoCard();
-    criarBotaoTopo();
-})
-
+});
 
 function prepararReacoes() {
     const artigos = document.querySelectorAll("article");
 
-    artigos.array.forEach((artigo, indice) => {
+    artigos.forEach((artigo, indice) => {
 
         const botoes = artigo.querySelectorAll("button");
 
-        if (botoes.leght <2) {
+        if (botoes.length < 2) {
             return;
         }
 
         const botaoUM = botoes[0];
         const botaoDOIS = botoes[1];
 
-        const contadorBotaoUM = botaoUM.querySelector("span");
-        const contadorBotaoDOIS = botaoUM.querySelector("span");
+        const contadorBotaoUM = botaoUM.querySelector("samp");
+        const contadorBotaoDOIS = botaoDOIS.querySelector("samp");
 
-        const idCard = 'card-${indice + 1}';
+        const idCard = `card-${indice + 1}`;
 
-        const chaveBotaUM = '${idcard}-botaoUM';
-        const chaveBotaDOIS = '${idcard}-botamDOIS';
+        const chaveBotaoUM = `${idCard}-botaoUM`;
+        const chaveBotaoDOIS = `${idCard}-botaoDOIS`;
 
-        let UM = number(localStore.getItem(chaveBotaUM))|| 0;
-        let DOIS = number(localStore.getItem(chaveBotaDOIS))|| 0;
+        let UM = Number(localStorage.getItem(chaveBotaoUM)) || 0;
+        let DOIS = Number(localStorage.getItem(chaveBotaoDOIS)) || 0;
 
-        contadorBotao.textocontent = UM;
-        contadorBotao.textocontent = DOIS;
+        contadorBotaoUM.textContent = UM;
+        contadorBotaoDOIS.textContent = DOIS;
 
-        botaoUM.addEventlistener("click", () =>{
+        botaoUM.addEventListener("click", () => {
             UM++;
-            contadorBotaoUM.textocontent = UM;
-
-            localStorage.setItem(
-                chaveBotaUM, UM
-            );
+            contadorBotaoUM.textContent = UM;
+            localStorage.setItem(chaveBotaoUM, UM);
         });
-        botaoDOIS.addEventlistener("click", () =>{
-            DOIS++;
-            contadorBotaoDOIS.textocontent = DOIS;
 
-            localStorage.setItem(
-                chaveBotaUM, DOIS
-            );
+        botaoDOIS.addEventListener("click", () => {
+            DOIS++;
+            contadorBotaoDOIS.textContent = DOIS;
+            localStorage.setItem(chaveBotaoDOIS, DOIS);
         });
     });
 }
